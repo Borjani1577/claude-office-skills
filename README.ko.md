@@ -131,16 +131,11 @@ claude-office-skills/
 │   ├── dcf-model/
 │   ├── lbo-model/
 │   └── comps-analysis/
-├── claude-in-powerpoint/
-│   ├── competitive-analysis/
-│   ├── deck-refresh/
-│   └── ib-check-deck/
-└── _sources/                    # 원본 추출 스냅샷 (설치 대상 아님)
-    ├── claude-in-excel/
-    └── claude-in-powerpoint/
+└── claude-in-powerpoint/
+    ├── competitive-analysis/
+    ├── deck-refresh/
+    └── ib-check-deck/
 ```
-
-`_sources/`는 Office 애드인에서 추출한 원본 텍스트를 보존해둔 폴더입니다. 스킬 동작에 필요한 건 아니고, 출처 추적·diff 확인용입니다.
 
 ---
 

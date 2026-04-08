@@ -131,16 +131,11 @@ claude-office-skills/
 │   ├── dcf-model/
 │   ├── lbo-model/
 │   └── comps-analysis/
-├── claude-in-powerpoint/
-│   ├── competitive-analysis/
-│   ├── deck-refresh/
-│   └── ib-check-deck/
-└── _sources/                    # raw extracted snapshots (not installed)
-    ├── claude-in-excel/
-    └── claude-in-powerpoint/
+└── claude-in-powerpoint/
+    ├── competitive-analysis/
+    ├── deck-refresh/
+    └── ib-check-deck/
 ```
-
-`_sources/` keeps the original extracted text from the Office add-ins as a provenance trail. You don't need it to run the skills — it's there for transparency and diffing.
 
 ---
 
